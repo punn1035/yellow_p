@@ -1,11 +1,16 @@
 import { Component } from '@angular/core';
 import templateString from './first.html';
+import { MyData } from '../my_data/my_data'; 
 
 @Component({
   template: templateString
 })
 export class FirstComponent {
   private editableText1: string;
+  private editableText2: string;
+  private tt: number;
+  private pp: number;
+  private rr: number;
 
   private a01: number;
   private a02: number;
@@ -26,6 +31,7 @@ export class FirstComponent {
 
   ngOnInit() {
     this.editableText1 = "Shoujo Shuumatsu Ryokou";
+    this.editableText2 = "Shoujo  Ryokou";
 
     this.a01 = 1
     this.a02 = 2
@@ -51,6 +57,22 @@ export class FirstComponent {
     this.b02 = Math.random()*100;
     this.b03 = Math.random()*100;
   }
+
+  button2Click() {
+    this.rr = Number(this.pp) + Number(this.tt)
+  }
+
+  ppChange(value) {
+    if(!this.pp){
+      this.pp = 0;
+    }
+    if(!this.tt){
+      this.tt = 0;
+    }
+    this.rr = Number(this.pp) + Number(this.tt)
+  }
+
+
 
   select1Change(value) {
     alert(value)

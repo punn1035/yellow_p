@@ -1,21 +1,29 @@
 import { Component } from '@angular/core';
-import templateString from './second.html';
+import templateString from './second_id.html';
 import { MyDataService } from '../my_data/my_data.service';
 import { MyData } from '../my_data/my_data';
+import {Router,ActivatedRoute} from '@angular/router';
 
 @Component({
   template: templateString,
   providers: [ MyDataService ]
 })
-export class SecondComponent {
+export class Second_idComponent {
   private myDatas: any;
   private attrs: any
   private newMyData: MyData;
   private createLabel;
   private text;
   private text1;
+  private id;
 
-  constructor(private myDataService: MyDataService) { }
+  constructor(private myDataService: MyDataService, private activatedRoute: ActivatedRoute) { 
+    this.activatedRoute.params.subscribe(paramsId => {
+      this.id = paramsId.id;
+    });
+  console.log(this.id);
+
+  }
 
   ngOnInit() {
     this.getAll();

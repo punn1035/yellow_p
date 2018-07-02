@@ -14,14 +14,10 @@
 
 
     <!-- All & Update -->
-    <tr *ngFor="let myData of myDatas">
-      <td><input type="text" [(ngModel)]="myData.string_test"></td>
-      <td><input type="number" [(ngModel)]="myData.integer_test"></td>
-      <td><input type="checkbox" [(ngModel)]="myData.boolean_test">boolean_test</td>
-      <td>
-        <button (click)="update(myData.id, myData.string_test, myData.integer_test, myData.boolean_test)">
-          Update
-        </button>
+    <tr>
+      <td><input type="text" [(ngModel)]="myDatas[id].string_test"></td>
+      <td><input type="number" [(ngModel)]="myDatas[id].integer_test"></td>
+      <td><input type="checkbox" [(ngModel)]="myDatas[id].boolean_test">boolean_test</td>
       </td>
     </tr>
 

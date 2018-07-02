@@ -24,6 +24,10 @@ class MyDatasController < ApplicationController
     render json: my_datas
   end
 
+  def texttexttext
+    render json: ["xtxtxtxtxtxtxtxxttxtx"]
+  end
+
   private
 
   def create_params

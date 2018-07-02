@@ -1,34 +1,50 @@
+<h1>{{resp[0]}}</h1>
+
 <h2>1. Variable</h2>
 <h3>{{ editableText1 }}</h3>
 <input type="text" [(ngModel)]="editableText1">
+<br>
+<h3>{{ editableText2 }}</h3>
+<input type="text" [(ngModel)]="editableText2">
 
-
-
-<h2>2. On Click</h2>
-<div>
-  <table id="table-1">
-    <thead>
-      <tr>
-        <th>Zero One</th>
-        <th>Zero Two</th>
-        <th>Zero Three</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>{{ a01 }}</td>
-        <td>{{ a02 }}</td>
-        <td>{{ a03 }}</td>
-      </tr>
-      <tr>
-        <td>{{ b01 }}</td>
-        <td>{{ b02 }}</td>
-        <td>{{ b03 }}</td>
-      </tr>
-    </tbody>
-  </table>
-  <button (click)="button1Click()">RANDOM!!!</button>
+<br>
+<br>
+<input type="checkbox" [(ngModel)]="checkbox1"> On Click
+<div *ngIf="checkbox1">
+  <h2>2. On Click</h2>
+  <div>
+    <table id="table-1">
+      <thead>
+        <tr>
+          <th>Zero One</th>
+          <th>Zero Two</th>
+          <th>Zero Three</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{ a01 }}</td>
+          <td>{{ a02 }}</td>
+          <td>{{ a03 }}</td>
+        </tr>
+        <tr>
+          <td>{{ b01 }}</td>
+          <td>{{ b02 }}</td>
+          <td>{{ b03 }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <button (click)="button1Click()">RANDOM!!!</button>
+    <input type="text" [(ngModel)]="pp" (change)="ppChange($event.target.value)">
+    <input type="text" [(ngModel)]="tt" (change)="ppChange($event.target.value)">
+    <br>
+    <h3>{{rr}}</h3>
+    <button (click)="button2Click()">PLUS!!!</button>
+  </div>
 </div>
+
+
+
 
 
 
@@ -57,6 +73,7 @@
 <input type="checkbox" [(ngModel)]="checkbox2"> If Else
 <div *ngIf="checkbox2; else elseBlockId"><h3>If Condition!!</h3></div>
 <ng-template #elseBlockId><h3>Else Condition!!</h3></ng-template>
+
 
 
 <h2>5. For Loop</h2>
